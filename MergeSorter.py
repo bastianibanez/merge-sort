@@ -5,15 +5,15 @@ class MergeSorter:
     def merge_sort(arr: list[int]):
         if len(arr) <= 1:
             return arr
-        
+
         mid = len(arr)//2
         l_arr, r_arr = arr[:mid], arr[mid:]
 
         MergeSorter.merge_sort(l_arr)
         MergeSorter.merge_sort(r_arr)
-        
+
         solution = MergeSorter._merge(arr, l_arr, r_arr)
-        
+
         if DEBUG:
             print(solution)
             print(l_arr)
@@ -21,7 +21,7 @@ class MergeSorter:
             print()
 
         return solution
-     
+
     @staticmethod
     def _merge(arr, l_arr, r_arr):
         i, l_idx, r_idx = 0, 0, 0

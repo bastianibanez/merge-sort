@@ -7,5 +7,3 @@ class RandomArray:
         for _ in range(n):
             arr.append(randint(-50,50))
         return arr
-
-        
