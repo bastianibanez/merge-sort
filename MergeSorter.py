@@ -1,22 +1,25 @@
-class MergeSorter:
-    def __init__(self):
-        pass
+DEBUG = False
 
+class MergeSorter:
     @staticmethod
     def merge_sort(arr: list[int]):
         if len(arr) <= 1:
-            return 
+            return arr
         
         mid = len(arr)//2
         l_arr, r_arr = arr[:mid], arr[mid:]
 
         MergeSorter.merge_sort(l_arr)
         MergeSorter.merge_sort(r_arr)
-        print(l_arr)
-        print(r_arr)
-
+        
         solution = MergeSorter._merge(arr, l_arr, r_arr)
-        print(solution)
+        
+        if DEBUG:
+            print(solution)
+            print(l_arr)
+            print(r_arr)
+            print()
+
         return solution
      
     @staticmethod
@@ -45,9 +48,3 @@ class MergeSorter:
             i += 1
 
         return arr
-        
-
-arr = [9,3,6,1,2,5]
-arr = MergeSorter.merge_sort(arr)
-print()
-print(arr)
